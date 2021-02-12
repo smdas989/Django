@@ -1,0 +1,51 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+{% block content %}
+<div class="content_box">
+	<div class="left_bar">
+	    <ul class=" nav-tabs--vertical nav" role="navigation">
+	
+	</ul>
+	</div>
+    <div class="right_bar ">
+        	<div class="tab-content ">
+		<div class="tab-pane fade show active" id="lorem" role="tabpanel">
+
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Standard</th>
+        <th>Roll no</th>
+        <th>Gender</th>
+        <th>Age</th>
+      </tr>
+    </thead>
+    {% for student in students%}
+    {% csrf_token %}
+    <tbody>
+      <tr>
+        <td> {{ student.username }}</td>
+        <td>{{ student.email }}</td>
+        <td>{{ student.standard }}</td>
+        <td>{{ student.roll_no }}</td>
+        <td> {{ student.gender }}</td>
+        <td>{{ student.age }}</td>
+      </tr>
+      {% endfor %}
+    
+    </tbody>
+  
+			</div>
+	</div>
+    </div>
+</div>
+{% endblock %}
